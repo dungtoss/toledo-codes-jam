@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b4c7skvn8xa68"]
+
+[ext_resource type="Script" uid="uid://c6o04g0uh682w" path="res://GameManager.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dk0upnnecx734" path="res://Target.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=2015822933]
+
+[node name="GameManager" type="Node" parent="." unique_id=1812084795]
+script = ExtResource("1_0xm2m")
+
+[node name="GameTimer" type="Timer" parent="GameManager" unique_id=1022696919]
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1443012792]
+offset_left = 232.0
+offset_top = 56.0
+offset_right = 323.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+
+[node name="TargetN" type="ColorRect" parent="." unique_id=473850965]
+custom_minimum_size = Vector2(120, 120)
+offset_left = 523.0
+offset_top = 106.0
+offset_right = 643.0
+offset_bottom = 226.0
+script = ExtResource("1_ig7tw")
+
+[node name="TargetS" type="ColorRect" parent="." unique_id=807392455]
+custom_minimum_size = Vector2(120, 120)
+offset_left = 526.0
+offset_top = 460.0
+offset_right = 646.0
+offset_bottom = 580.0
+script = ExtResource("1_ig7tw")
+dir = 1
+
+[node name="TargetE" type="ColorRect" parent="." unique_id=1732289088]
+custom_minimum_size = Vector2(120, 120)
+offset_left = 842.0
+offset_top = 279.0
+offset_right = 962.0
+offset_bottom = 399.0
+script = ExtResource("1_ig7tw")
+dir = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TargetW" type="ColorRect" parent="." unique_id=1508286620]
+custom_minimum_size = Vector2(120, 120)
+offset_left = 247.0
+offset_top = 298.0
+offset_right = 367.0
+offset_bottom = 418.0
+script = ExtResource("1_ig7tw")
+dir = 3
+
+[node name="CenterCat" type="Node2D" parent="." unique_id=171480109]
+
+[node name="Cat" type="ColorRect" parent="CenterCat" unique_id=1711427184]
+custom_minimum_size = Vector2(120, 120)
+offset_left = 525.0
+offset_top = 288.0
+offset_right = 645.0
+offset_bottom = 408.0
+color = Color(0.9254902, 0.47843137, 0.10980392, 1)
+
+[node name="TimerLabel" type="Label" parent="CenterCat" unique_id=688955445]
+custom_minimum_size = Vector2(48, 48)
+offset_left = 549.0
+offset_top = 10.0
+offset_right = 622.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 64
+text = "60"
