@@ -10,6 +10,8 @@ script = ExtResource("1_0xm2m")
 
 [node name="GameTimer" type="Timer" parent="GameManager" unique_id=1022696919]
 
+[node name="PhaseTimer" type="Timer" parent="GameManager" unique_id=2076533932]
+
 [node name="ScoreLabel" type="Label" parent="." unique_id=1443012792]
 offset_left = 232.0
 offset_top = 56.0
