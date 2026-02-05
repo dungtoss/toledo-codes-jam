@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b01irn0fthd5b"]
+
+[ext_resource type="Script" uid="uid://dgyq0syt26e1a" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://cdug560uouvd6" path="res://UI Assets/Main Menu Assets/menu-illustration.PNG" id="5_qe12f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_06t4h"]
+load_path = "res://.godot/imported/tutorial-button.PNG-53e3995565ce8b0a7b688308341eb1d0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7vrkn"]
+load_path = "res://.godot/imported/tutorial-button-pressed.PNG-d086f1f2709044a462ea03987e1b0daf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fu7sn"]
+load_path = "res://.godot/imported/tutorial-button-pressed.PNG-d086f1f2709044a462ea03987e1b0daf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jix8l"]
+load_path = "res://.godot/imported/play-button.PNG-4ab041449ecbefdd464b1d9cd1bcd22f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_glbon"]
+load_path = "res://.godot/imported/play-button-pressed.PNG-6514772eed396bfce4fd772ab68efead.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nlkkf"]
+load_path = "res://.godot/imported/play-button-pressed.PNG-6514772eed396bfce4fd772ab68efead.ctex"
+
+[node name="MainMenu" type="Node2D" unique_id=264050302]
+script = ExtResource("1_7vrkn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=135339391]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_qe12f")
+
+[node name="TutorialButton" type="TextureButton" parent="." unique_id=424431957]
+custom_minimum_size = Vector2(567, 206)
+offset_left = 1284.0
+offset_top = 804.0
+offset_right = 1851.0
+offset_bottom = 1010.0
+texture_normal = SubResource("CompressedTexture2D_06t4h")
+texture_pressed = SubResource("CompressedTexture2D_7vrkn")
+texture_hover = SubResource("CompressedTexture2D_fu7sn")
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=1709847046]
+custom_minimum_size = Vector2(437, 206)
+offset_left = 56.0
+offset_top = 799.0
+offset_right = 493.0
+offset_bottom = 1005.0
+texture_normal = SubResource("CompressedTexture2D_jix8l")
+texture_pressed = SubResource("CompressedTexture2D_glbon")
+texture_hover = SubResource("CompressedTexture2D_nlkkf")
+
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
