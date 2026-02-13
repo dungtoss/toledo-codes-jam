@@ -31,21 +31,21 @@ offset_bottom = 1080.0
 texture = ExtResource("5_qe12f")
 
 [node name="TutorialButton" type="TextureButton" parent="." unique_id=424431957]
-custom_minimum_size = Vector2(567, 206)
-offset_left = 1284.0
-offset_top = 804.0
-offset_right = 1851.0
-offset_bottom = 1010.0
+custom_minimum_size = Vector2(335, 143)
+offset_left = 475.0
+offset_top = 891.0
+offset_right = 810.0
+offset_bottom = 1036.0
 texture_normal = SubResource("CompressedTexture2D_06t4h")
 texture_pressed = SubResource("CompressedTexture2D_7vrkn")
 texture_hover = SubResource("CompressedTexture2D_fu7sn")
 
 [node name="PlayButton" type="TextureButton" parent="." unique_id=1709847046]
-custom_minimum_size = Vector2(437, 206)
-offset_left = 56.0
-offset_top = 799.0
-offset_right = 493.0
-offset_bottom = 1005.0
+custom_minimum_size = Vector2(332, 145)
+offset_left = 73.0
+offset_top = 889.0
+offset_right = 408.0
+offset_bottom = 1034.0
 texture_normal = SubResource("CompressedTexture2D_jix8l")
 texture_pressed = SubResource("CompressedTexture2D_glbon")
 texture_hover = SubResource("CompressedTexture2D_nlkkf")

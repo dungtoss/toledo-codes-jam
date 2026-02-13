@@ -2,9 +2,40 @@
 
 [ext_resource type="Script" uid="uid://c6o04g0uh682w" path="res://GameManager.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dk0upnnecx734" path="res://Target.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://0bn46jykpv3d" path="res://UI Assets/Game Screen Assets/game-screen-bkg.jpg" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dfquj2ggr0lgf" path="res://UI Assets/Game Screen Assets/up-arrow-button.PNG" id="2_kek77"]
+[ext_resource type="Texture2D" uid="uid://dvco8kkraowj" path="res://UI Assets/Game Screen Assets/up-arrow-button-pressed.PNG" id="3_4c57u"]
+[ext_resource type="Texture2D" uid="uid://iwxgpa7b5oh2" path="res://UI Assets/Game Screen Assets/temporal-instability-gauge.PNG" id="3_w48qg"]
+[ext_resource type="Texture2D" uid="uid://oapjwkv13j10" path="res://UI Assets/Game Screen Assets/down-arrow-button.PNG" id="4_efxa6"]
+[ext_resource type="Texture2D" uid="uid://dg2dtoagts5ic" path="res://UI Assets/Game Screen Assets/menu-button.PNG" id="4_vivmo"]
+[ext_resource type="Texture2D" uid="uid://iunvrlt8t7o2" path="res://UI Assets/Game Screen Assets/menu-button-pressed.PNG" id="5_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://d2vsserpp17dh" path="res://UI Assets/Game Screen Assets/down-arrow-button-pressed.PNG" id="5_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dveahbov52pmj" path="res://UI Assets/Game Screen Assets/left-arrow-button.PNG" id="6_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://c1g8mwpd8aebn" path="res://UI Assets/Game Screen Assets/left-arrow-button-pressed.PNG" id="7_w48qg"]
+[ext_resource type="Texture2D" uid="uid://d2se5o7fk8y4g" path="res://UI Assets/Game Screen Assets/right-arrow-button.PNG" id="8_efxa6"]
+[ext_resource type="Script" uid="uid://b41vyjdf18ofm" path="res://arrow_buttons.gd" id="8_vivmo"]
+[ext_resource type="Texture2D" uid="uid://dcqs6svjma7g3" path="res://UI Assets/Game Screen Assets/right-arrow-button-pressed.PNG" id="9_dg77c"]
+
+[sub_resource type="GDScript" id="GDScript_w48qg"]
+script/source = "extends TextureButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://main_menu.tscn\")
+"
 
 [node name="Main" type="Node2D" unique_id=2015822933]
-position = Vector2(391, 202)
+position = Vector2(390, 210)
 
 [node name="GameManager" type="Node" parent="." unique_id=1812084795]
 script = ExtResource("1_0xm2m")
@@ -19,6 +50,71 @@ offset_bottom = 90.0
 theme_override_font_sizes/font_size = 24
 text = "Score: 0"
 metadata/_edit_use_anchors_ = true
+
+[node name="bkg" type="TextureRect" parent="." unique_id=116883294]
+offset_left = -390.0
+offset_top = -200.0
+offset_right = 1530.0
+offset_bottom = 880.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_h2yge")
+
+[node name="TemporalInstabilityGauge" type="TextureRect" parent="." unique_id=1368886605]
+offset_left = -231.0
+offset_top = -170.0
+offset_right = 1513.0
+offset_bottom = -48.0
+texture = ExtResource("3_w48qg")
+
+[node name="MenuButton" type="TextureButton" parent="." unique_id=2123124780]
+offset_left = -376.0
+offset_top = -177.0
+offset_right = -240.0
+offset_bottom = -53.0
+texture_normal = ExtResource("4_vivmo")
+texture_pressed = ExtResource("5_2cqfq")
+script = SubResource("GDScript_w48qg")
+
+[node name="UpArrowButton" type="TextureButton" parent="." unique_id=741405766]
+offset_left = 1146.0
+offset_top = 486.0
+offset_right = 1323.0
+offset_bottom = 661.0
+toggle_mode = true
+texture_normal = ExtResource("2_kek77")
+texture_pressed = ExtResource("3_4c57u")
+script = ExtResource("8_vivmo")
+
+[node name="DownArrowButton" type="TextureButton" parent="." unique_id=178103742]
+offset_left = 1156.0
+offset_top = 667.0
+offset_right = 1326.0
+offset_bottom = 843.0
+toggle_mode = true
+texture_normal = ExtResource("4_efxa6")
+texture_pressed = ExtResource("5_dg77c")
+script = ExtResource("8_vivmo")
+
+[node name="LeftArrowButton" type="TextureButton" parent="." unique_id=992614250]
+offset_left = 962.0
+offset_top = 667.0
+offset_right = 1135.0
+offset_bottom = 845.0
+toggle_mode = true
+texture_normal = ExtResource("6_ycdy4")
+texture_pressed = ExtResource("7_w48qg")
+script = ExtResource("8_vivmo")
+
+[node name="RightArrowButton" type="TextureButton" parent="." unique_id=580018693]
+offset_left = 1338.0
+offset_top = 667.0
+offset_right = 1505.0
+offset_bottom = 848.0
+toggle_mode = true
+texture_normal = ExtResource("8_efxa6")
+texture_pressed = ExtResource("9_dg77c")
+script = ExtResource("8_vivmo")
 
 [node name="TargetN" type="ColorRect" parent="." unique_id=473850965]
 custom_minimum_size = Vector2(120, 120)
@@ -79,3 +175,5 @@ offset_bottom = 98.0
 theme_override_font_sizes/font_size = 64
 text = "60"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MenuButton" to="MenuButton" method="_on_pressed"]

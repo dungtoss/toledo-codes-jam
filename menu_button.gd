@@ -1,4 +1,4 @@
-extends Node2D
+extends TextureButton
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
-
-
-func _on_tutorial_button_pressed():
-	pass # Replace with function body.
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file("res://main_menu.tscn")

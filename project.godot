@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Wackmeplease"
+config/name="Fever Nap"
 run/main_scene="uid://b01irn0fthd5b"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

@@ -68,7 +68,6 @@ func set_target_pressed(d: int, is_pressed: bool) -> void:
 		Dir.E: tE.set_pressed(is_pressed)
 		Dir.W: tW.set_pressed(is_pressed)
 
-
 func next_round() -> void:
 	# turn off all prompts first
 	tN.set_prompt(false)
